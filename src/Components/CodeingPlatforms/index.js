@@ -29,7 +29,7 @@ const CodeingPlatforms = () =>{
             catch(error){
                 console.log(error)
             }*/
-            fetch('https://codechef-api.vercel.app/klu_030392')
+            /*fetch('https://codechef-api.vercel.app/klu_030392')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -41,8 +41,22 @@ const CodeingPlatforms = () =>{
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
+            });*/
+            fetch('https://codechefserverforsanthosh.onrender.com/fetch-data', {
+                method: 'GET',
+            })
+            .then(response => {
+                // Check if the request was successful (status 0 indicates a successful response for 'no-cors' mode)
+                return response.json()
+            })
+            .then(data=>{
+                console.log(data)
+            })
+            .catch(error => {
+                // Handle errors
+                console.error('Error fetching data:', error);
             });
-            
+                        
         }
         const codeForces = async () => {
             try{
